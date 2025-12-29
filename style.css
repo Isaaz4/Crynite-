@@ -1,0 +1,1355 @@
+:root {
+    --bg-dark: #020617;
+    --overlay: rgba(2, 9, 40, 0.9);
+    --grid-color: rgba(59, 130, 246, 0.04);
+    --white: #093593;
+    --card-bg: linear-gradient(180deg, #07102a, #02081a);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: proximity;
+    -moz-osk-font-smoothing: grayscale;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background-color: #01050f;
+    margin: 0;
+    color: white;
+    z-index: 3;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+}
+
+body.light {
+    background: #f8faff;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 9999;
+    padding: 12px 3px 12px 20px;
+    cursor: pointer;
+    background-color: #010815;
+}
+
+.brand {
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+.nav {
+    display: flex;
+    font-size: 17px;
+    gap: 28px;
+    box-shadow: 10px wheat;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav li a:hover {
+    color: blue;
+    transition: transform 0.3s ease;
+    transform: translateY(5);
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.color {
+    color: rgb(34, 34, 237);
+}
+
+.color.light {
+    color: rgb(1, 1, 158);
+}
+
+body.light .fa-moon {
+    display: none;
+}
+
+body.light .fa-sun {
+    display: inline;
+}
+
+.Authentication {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.Authentication .login {
+    color: white;
+    height: auto;
+    width: auto;
+    background: transparent;
+    padding: 6px;
+    border: 2px solid rgb(103, 101, 209);
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.Authentication .login.light {
+    border: 2px solid navy;
+    cursor: pointer;
+}
+
+.Authentication .signup {
+    color: blue;
+    height: auto;
+    width: auto;
+    background: white;
+    padding: 6px;
+    border: 2px solid #FAFAFA;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.Authentication .ThemeToggle {
+    color: inherit;
+    background: transparent;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.Authentication .fab {
+    background-color: transparent;
+    font-size: 18px;
+}
+
+.Authentication .login:hover {
+    transform: scale(0.97);
+    transition: all 0.3s ease;
+}
+
+.Authentication .signup:hover {
+    transform: scale(0.97);
+    transition: all 0.3s ease;
+}
+
+/* mobile nav wrapper */
+.mobilenav {
+    position: relative;
+    display: none;
+}
+
+/* hamburger button */
+.hamburger {
+    position: relative;
+    z-index: 1001;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+}
+
+/* mobile menu overlay */
+.mobilemenu {
+    position: fixed;
+    /* 🔥 KEY FIX */
+    top: 40px;
+    left: 0;
+    width: 250%;
+    height: auto;
+    padding: 18px 10px 18px 10px;
+    display: grid;
+    gap: 10px;
+    background: #000;
+    color: navy;
+    transform: translatex(-100%);
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    z-index: 999;
+    opacity: 0;
+}
+
+/* open state */
+.mobilemenu.open {
+    display: grid;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* menu items */
+.mobilemenu li {
+    list-style: none;
+    width: 60%;
+    padding: 8px;
+}
+
+.mobilemenu li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    height: 100%;
+    padding: 5px;
+    border: 2px dashed navy;
+}
+
+.mobilemenu li a:hover {
+    color: navy;
+    border: 1px dashed white;
+    transition: transform 0.3s ease;
+}
+
+.mobilemenu .themeToggle {
+    color: white;
+    background: transparent;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+}
+
+.Authenticationmobile .fa {
+    padding: 3px;
+    border: 1px solid blue;
+    font-size: 18px;
+    background-color: transparent;
+}
+
+.mobilemenu .themetoggle.light {
+    text-align: right;
+    background-color: white;
+}
+
+/* auth buttons */
+.Authenticationmobile {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.Authenticationmobile .login {
+    background-color: transparent;
+    color: blue;
+    padding: 5px;
+    border-radius: 8px;
+    transition: transform 0.6s ease-in;
+}
+
+.Authenticationmobile .signup {
+    background-color: white;
+    color: navy;
+    padding: 5px;
+    border-radius: 8px;
+    transition: transform 0.6s ease-in;
+}
+
+.Authenticationmobile .login:hover {
+    transition: scale(1.1);
+}
+
+.Authenticationmobile .signup:hover {
+    transition: scale(1.1);
+}
+
+.wallet {
+    color: white;
+    height: auto;
+    width: auto;
+    background: linear-gradient(80deg, rgb(34, 34, 237));
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* home section */
+#home {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 0;
+    z-index: 3;
+    font-family: "Nunito", sans-serif;
+    color: white;
+}
+
+.hero:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 40% 50%,
+            #020d3e 0%,
+            #010d30 25%,
+            #010815 50%,
+            #01050f 75%,
+            #00030a 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero.light {
+    color: navy;
+}
+
+/* Light mode */
+.hero.light:before {
+    background: #ffffff;
+    color: navy;
+}
+
+.herotext {
+    font-family: "Nunito", sans-serif;
+    width: 50%;
+    white-space: wrap;
+}
+
+.big {
+    font-size: 53.6px;
+    font-weight: 500;
+    padding-bottom: 3px;
+}
+
+.big img {
+    display: none;
+}
+
+.span {
+    font-size: 58.3px;
+}
+
+.small {
+    font-size: 16.9px;
+    padding: 0 0 10px 0;
+    line-height: 1.5;
+}
+
+.smallertext {
+    font-size: 16px;
+    padding-bottom: 5px;
+    line-height: 1.5;
+}
+
+.herobut {
+    border: none;
+    margin-top: 5px;
+    background: blue;
+    color: rgb(244, 244, 254);
+    padding: 10px;
+    border-radius: 2px 2px 2px;
+    border: 2px solid rgb(1, 1, 12);
+    font-size: 16px;
+}
+
+.herobut.light {
+    background: navy;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+
+.herobut:hover {
+    background-color: white;
+    color: blue;
+    border: 2px solid blue;
+}
+
+.heroimage {
+    position: relative;
+    top: -10px;
+}
+
+.heroimage img {
+    width: 390px;
+    height: auto;
+}
+
+.animation {
+    position: relative;
+    width: 100%;
+    background-image: url(allec-gomes-TNMgD281040-unsplash.jpg);
+    background-attachment: fixed;
+    gap: 10px;
+    z-index: 2;
+    padding: 0;
+}
+
+.ticker {
+    display: flex;
+    width: fit-content;
+    animation: text infinite linear 40s;
+}
+
+.ticker .a {
+    width: 100%;
+    padding: 20px 5px 20px 20px;
+    display: inline-block;
+    white-space: nowrap;
+    color: white;
+}
+
+#crypto {
+    position: relative;
+    width: 100%;
+    padding: 20px 0 5rem 0;
+    z-index: 2;
+}
+
+#crypto h1 {
+    text-align: left;
+    padding: 20px 0 10px 40px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+
+#crypto h1:hover {
+    color: blue;
+    transition: all;
+}
+
+#crypto h1.light {
+    color: navy;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 10px 25px 60px;
+}
+
+.product {
+    width: 9rem;
+    height: auto;
+    background: var(--card-bg);
+    color: color(#FFFDF7, #F8FBFF, #FAFAFA);
+    opacity: 1;
+    transition: transform 0.3s ease, 0.3s ease;
+    padding: 8px;
+    border-radius: 2px;
+}
+
+.coinname {
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    height: auto;
+    width: auto;
+    box-shadow: 0 80px 22px rgba(2, 6, 23, 0.6);
+    gap: 10px;
+}
+
+.half {
+    margin-top: 10px;
+    display: block;
+}
+
+.fa-bitcoin {
+    font-size: 30px;
+    color: gold;
+}
+
+.coin i {
+    font-size: 30px;
+}
+
+.coin svg {
+    height: 30px;
+    width: 30px;
+}
+
+.coin img {
+    position: relative;
+    height: 30px;
+    width: 30px;
+}
+
+.coinsmall {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.coin .price {
+    font-size: 20px;
+}
+
+.half .change {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.half .button {
+    position: relative;
+    font-size: 25px;
+    transition: transform 0.3s ease;
+}
+
+.trade {
+    display: flex;
+    align-items: center;
+    background-color: rgb(8, 8, 219);
+    color: white;
+    border: 2px solid rgba(64, 22, 255, 0.72);
+    border-radius: 2px;
+    padding: 5px 8px 5px 8px;
+}
+
+.trade:hover {
+    color: blue;
+    background: white;
+    border: 2px solid transparent;
+    border-color: blue;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+}
+
+/* animation */
+@keyframes text {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translatex(-100%);
+    }
+}
+
+/* about section */
+#about {
+    position: relative;
+}
+
+.style1 {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    width: 100%;
+    filter: blur(0.78px);
+    gap: 0;
+    padding: 20px 40px 0 8rem;
+}
+
+.style2 {
+    display: flex;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: 700;
+    width: 100%;
+    gap: 0;
+    filter: blur(0.79px);
+    padding: 0 40px 20px 8rem;
+}
+
+.showcase {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 3px 6rem 10px 8rem;
+    height: auto;
+}
+
+.feature {
+    background: linear-gradient(180deg, #07102a, #02081a);
+    padding: 24px;
+    border-radius: 14px;
+    min-height: 100%;
+    width: 60%;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.feature h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.feature p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #b5c0ff;
+}
+
+/* security section */
+.security {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    align-items: center;
+    top: 100px;
+    padding: 10px 0 50px 0;
+    color: white;
+}
+
+.security.light {
+    color: navy;
+}
+
+.security h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.security p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* join community section */
+.community {
+    position: relative;
+    padding: 40px;
+    gap: 10px;
+    width: auto;
+    height: auto;
+}
+
+.communitycontainer {
+    padding: 50px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+}
+
+.join {
+    background: linear-gradient(180deg, #07102a, #02081a);
+    color: white;
+    padding: 30px;
+    width: 40%;
+    border-radius: 15px;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.join:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.jointitle {
+    margin-bottom: 8px;
+    font-size: 23px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.jointext {
+    display: flex;
+    align-items: center;
+    font-size: 16.2px;
+    margin: 3px 0 15px 0;
+    color: #b5c0ff;
+    line-height: 1.3;
+}
+
+.join button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: blue;
+    font-size: 15px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 3px;
+    padding: 7px;
+    box-shadow: 1px 3px 4px 2px #FAFAFA;
+}
+
+.telegram a:hover {
+    transition: transform 0.3s ease;
+}
+
+
+#contact {
+    background: linear-gradient(180deg, #020617, #00040f);
+    color: #e5ecff;
+    padding: 50px 16px 20px;
+    margin-top: 40px;
+}
+
+.contact.light {
+    background: #f5f5f5;
+    color: #333333;
+}
+
+/* container */
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* brand */
+.footer-brand h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: #b5c0ff;
+}
+
+/* sections */
+.footer-section h4 {
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.footer-section a {
+    display: block;
+    color: #b5c0ff;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-section a:hover {
+    color: #3b82f6;
+}
+
+/* contact item */
+.footer-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-item i {
+    margin-right: 10px;
+    color: #3b82f6;
+}
+
+/* bottom */
+.footer-bottom {
+    text-align: center;
+    font-size: 13px;
+    color: #8da2ff;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 12px;
+}
+
+/* desktop */
+@media (min-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* small phone screen from 360px iphone 6 screen to 600px */
+@media screen and (min-width:320px) and (max-width:600px) {
+    body {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    header {
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px 5px 10px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .mobilemenu {
+        display: none;
+    }
+
+    .mobilenav {
+        display: flex;
+        line-height: 1.0;
+    }
+
+    .hambudger p {
+        font-size: 20px;
+        width: 130%;
+    }
+
+    #home {
+        padding: 10px;
+        margin: 0;
+        height: auto;
+    }
+
+    .hero {
+        width: 100%;
+        padding: 50px 7px 10px 7px;
+        display: flex;
+    }
+
+    .heroimage {
+        display: none;
+    }
+
+    .big {
+        align-items: center;
+    }
+
+    .big img {
+        display: inline;
+        position: relative;
+        height: 3rem;
+        width: 3rem;
+        top: 10px;
+        animation-name: image;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-delay: 0ms;
+    }
+
+    .herotext {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .herotext .big {
+        font-size: 33.4px;
+    }
+
+    .span {
+        font-size: 35.4px;
+    }
+
+    .small {
+        font-size: 13px;
+        margin-bottom: 8px;
+        line-height: 1.6;
+    }
+
+    .smallertext {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    #crypto {
+        padding: 10px;
+        display: block;
+        /* fine */
+    }
+
+    #crypto h1 {
+        padding: 0;
+        text-align: left;
+        margin-left: 10px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px 10px 20px 25px;
+    }
+
+
+    .showcase {
+        display: grid;
+        justify-items: center;
+        gap: 20px;
+        margin: 0;
+        gap: 24px;
+        padding: 20px;
+    }
+
+    .feature {
+        background: linear-gradient(180deg, #07102a, #02081a);
+        padding: 24px;
+        border-radius: 14px;
+        min-height: 200px;
+        text-align: left;
+        width: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .feature h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+
+    .feature p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #b5c0ff;
+    }
+
+    .style1 {
+        padding: 0;
+        text-align: center;
+    }
+
+    .style2 {
+        padding: 2px 0 2px 0;
+        text-align: center;
+    }
+
+    .security {
+        top: 10px;
+        height: auto;
+    }
+
+    .security h1 {
+        text-align: center;
+    }
+
+    .security p {
+        text-align: center;
+        padding: 0 10px 0 10px;
+    }
+
+    .communitycontainer {
+        display: grid;
+        gap: 10px;
+    }
+
+    .join {
+        width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 767px) {
+    body {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        padding: 0;
+        margin: 0;
+    }
+
+    header {
+        padding: 10px 5px 5px 8px;
+        margin: 0;
+        width: 100%;
+    }
+
+    .brand {
+        font-size: 25px;
+    }
+
+    .nav {
+        gap: 15px;
+    }
+
+    ul {
+        gap: 20px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .connect {
+        display: none;
+    }
+
+    #home {
+        width: 100%;
+        height: auto;
+        padding: 10px 10px 5px 30px;
+        margin: 0;
+        top: 60px;
+    }
+
+    #home img {
+        position: relative;
+        height: auto;
+        width: 300px;
+        float: inline-end;
+        z-index: 2;
+    }
+
+    .herotext {
+        margin: 0;
+        padding: 0;
+        font-weight: 100;
+        width: 60%;
+        white-space: wrap;
+    }
+
+    .heroimage {
+        width: 50%;
+    }
+
+    .big {
+        width: 100%;
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+    .span {
+        font-size: 37px;
+        font-weight: 500;
+        font-variant-position: super;
+        white-space: wrap;
+    }
+
+    .small {
+        font-size: 14px;
+        font-family: none;
+        font-weight: 100;
+    }
+
+    .smallertext {
+        font-weight: none;
+        font-family: none;
+        font-size: 12px;
+    }
+
+    .herobut {
+        font-size: 13px;
+        border: 2px solid rgb(137, 138, 177);
+    }
+
+    #crypto {
+        padding: 20px 0 4rem 0;
+        top: 50px;
+    }
+
+    #crypto h1 {
+        font-size: 25px;
+        padding: 2px 2px 2px 8px;
+        margin-right: 10px;
+        text-align: left;
+    }
+
+    .container {
+        width: 100%;
+        margin-inline: 0;
+        padding: 21px 50px 10px 50px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .style1 {
+        padding: 20px 0 0 0;
+        text-align: center;
+    }
+
+    .style2 {
+        padding: 3px 0 8px 0;
+        text-align: center;
+    }
+
+    .security {
+        padding: 20px 10px 20px 0;
+        top: 10px;
+        height: auto;
+    }
+
+    .security h1 {
+        padding: 20px 20px 3px 20px;
+    }
+
+    .security p {
+        display: flex;
+        justify-content: center;
+        height: auto;
+        width: 100%;
+        padding: 2px 5px 2px 10px;
+    }
+
+    .community {
+        width: 100%;
+    }
+
+    .join {
+        height: auto;
+    }
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 900px) {
+    body {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        padding: 0;
+        margin: 0;
+    }
+
+    header {
+        padding: 10px 5px 5px 8px;
+        margin: 0;
+        width: 100%;
+    }
+
+    .brand {
+        font-size: 25px;
+    }
+
+    .nav {
+        gap: 15px;
+    }
+
+    ul {
+        gap: 20px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .connect {
+        display: none;
+    }
+
+    #home {
+        width: 100%;
+        padding: 10px 10px 5px 10px;
+        margin: 0;
+        top: 20px;
+    }
+
+    #home img {
+        position: relative;
+        height: auto;
+        width: 330px;
+        float: inline-end;
+        z-index: 2;
+        top: -5px;
+    }
+
+    .hero {
+        padding: 0 20px 0 20px;
+        gap: 5px;
+    }
+
+    .herotext {
+        margin: 0;
+        padding: 0;
+        font-weight: 100;
+        width: 60%;
+    }
+
+    .heroimage {
+        width: 45%;
+        top: 0;
+    }
+
+    .big {
+        width: 100%;
+        font-size: 42px;
+        font-weight: 500;
+    }
+
+    .span {
+        font-size: 45px;
+        font-weight: 500;
+        font-variant-position: super;
+        white-space: wrap;
+    }
+
+    .small {
+        font-size: 15px;
+        font-family: none;
+        font-weight: 100;
+    }
+
+    .smallertext {
+        font-weight: none;
+        font-family: none;
+        font-size: 12px;
+    }
+
+    .herobut {
+        font-size: 13px;
+        border: 2px solid rgb(137, 138, 177);
+    }
+
+    #crypto {
+        padding: 20px 0 4rem 0;
+        display: block;
+    }
+
+    #crypto h1 {
+        font-size: 25px;
+        padding: 2px 2px 2px 8px;
+        margin-right: 10px;
+        display: flex;
+        justify-content: left;
+        width: 100%;
+    }
+
+    .container {
+        width: 100%;
+        margin-inline: 0;
+        padding: 21px 55px 10px 55px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .security {
+        padding: 20px 10px 20px 0;
+        top: 10px;
+        height: auto;
+    }
+
+    .security h1 {
+        padding: 20px 20px 3px 20px;
+    }
+
+    .security p {
+        display: flex;
+        justify-content: center;
+        height: auto;
+        width: 100%;
+        padding: 2px 5px 2px 10px;
+        text-align: center;
+    }
+
+    .community {
+        width: 100%;
+    }
+
+    .join {
+        height: auto;
+    }
+
+}
+
+@media screen and (min-width:910px) and (max-width:1020px) {
+    body {
+        height: 100%;
+        width: 100%;
+    }
+
+    header {
+        padding: 20px 40px 20px 30px;
+    }
+
+    #home {
+        padding: 20px 30px 20px 30px;
+        top: 45px;
+    }
+
+    .hero {
+        padding: 0;
+    }
+
+    .herotext {
+        width: auto;
+        top: -5px;
+        position: relative;
+    }
+
+    .big {
+        font-size: 45px;
+    }
+
+    .span {
+        font-size: 48px;
+    }
+
+    .small {
+        line-height: 1.6;
+    }
+
+    .smalltext {
+        line-height: 1.6;
+    }
+
+    .heroimage {
+        width: 100%;
+        padding: 0 30px 0 0;
+    }
+
+    .heroimage img {
+        width: 350px;
+        height: 80%;
+    }
+
+    #crypto {
+        padding: 20px 40px 20px 30px;
+        height: auto;
+        display: block;
+        top: 30px;
+    }
+
+    #crypto h1 {
+        padding: 0 0 10px 0;
+        text-align: left;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+    }
+
+    #about {
+        padding: 20px 40px 20px 30px;
+    }
+}
+
+@media screen and (min-width: 1024px) {}

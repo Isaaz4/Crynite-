@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto project</title>
+    <link rel="stylesheet" href="crypto.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="brand">
+            <span>CRY</span><span class="color">NITE</span>
+        </div>
+        <div class="nav">
+            <nav>
+                <li class="home"><a href="#home">Home</a></li>
+                <li class="crypto"><a href="#crypto">Crypto</a></li>
+                <li class="about"><a href="#about">About-us</a></li>
+                <li class="Contact"><a href="#contact">Contact</a></li>
+                <!-- <li> <button class="wallet"> Connect Wallet <i class="fas fa-wallet"></i></button></li> -->
+            </nav>
+
+            <div class="Authentication">
+                <button class="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <a href="kucoin.com"><button class="login">Login</button></a>
+                <a href="kucoin.com"><button class="signup">Sign-up</button></a>
+            </div>
+        </div>
+        <div class="mobilenav">
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="mobilemenu">
+                <ul>
+                    <button class="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                    <li class="home"><a href="#home">Home</a></li>
+                    <li class="crypto"><a href="#crypto">Crypto</a></li>
+                    <li class="about"><a href="#about">About-us</a></li>
+                    <li class="Contact"><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="Authenticationmobile">
+                    <a href="by"><button class="login">Log In</button></a>
+                    <a href="b.com"><button class="signup">Sign Up</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="home">
+        <div class="hero">
+            <div class="herotext">
+                <p class="big">The Future of <img src="ed.png" alt=""><span class="span"><br>Money Starts Here.</span>
+                </p>
+                <p class="small">Simple tools. Powerful features.
+                    Designed for<br> everyone—from beginners to experts.</p>
+                <p class="smallertext">Discover a smarter,faster,and more secure way to invest in cryptocurrencies. With
+                    Crynite,you get simple tools and powerful featues designed to help you trade confidently and grow
+                    your digital wealth.</p>
+                <button class="herobut">Start investing</button>
+            </div>
+            <div class="heroimage">
+                <img src="ed.png" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <section id="crypto">
+        <h1>Popular Crypto</h1>
+        <div class="container">
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <i class="fa-brands fa-bitcoin"></i>
+                    </div>
+                    <div class="ps">
+                        <p class="name">BITCOIN</p>
+                        <p class="coinsmall">BTC</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="btc-price"></p>
+                    <p id="btc-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <svg viewBox="0 0 32 32">
+                            <circle cx="16" cy="16" r="16" fill="#627EEA" />
+                            <path fill="#fff" d="M16 4l-7 12 7 4 7-4-7-12zm0 24l7-10-7 4-7-4 7 10z" />
+                        </svg>
+                    </div>
+                    <div class="ps">
+                        <p class="name">ETHEREUM</p>
+                        <p class="coinsmall">ETH</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="eth-price"></p>
+                    <p class="eth-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <img src="https://coin-images.coingecko.com/coins/images/4128/large/solana.png?" alt="">
+                    </div>
+                    <div class="ps">
+                        <p class="name">SOLANA</p>
+                        <p class="coinsmall">SOL</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="sol-price"></p>
+                    <p id="sol-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <img src="https://coin-images.coingecko.com/coins/images/325/large/Tether.png?" alt="">
+                    </div>
+                    <div class="ps">
+                        <p class="name">Tether</p>
+                        <p class="coinsmall">USDT</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="usdt-price"></p>
+                    <p id="usdt-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <svg viewBox="0 0 32 32">
+                            <circle cx="16" cy="16" r="16" fill="#C2A633" />
+                            <path fill="#fff" d="M12 8h6c3 0 5 2 5 5s-2 5-5 5h-3v6h-3V8z" />
+                        </svg>
+                    </div>
+                    <div class="ps">
+                        <p class="name">DOGECOIN</p>
+                        <p class="coinsmall">DOGE</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="doc-price"></p>
+                    <p id="doc-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="50" fill="#000" />
+                            <path fill="#fff"
+                                d="M72 23L57 38a17 17 0 01-24 0L18 23h10l15 15a11 11 0 0014 0l15-15h10zM18 77l15-15a17 17 0 0124 0l15 15H62L47 62a11 11 0 00-14 0L18 77z" />
+                        </svg>
+                    </div>
+                    <div class="ps">
+                        <p class="name">XRP</p>
+                        <p class="coinsmall">xrp</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="xrp-price"></p>
+                    <p id="xrp-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <img src="https://coin-images.coingecko.com/coins/images/6319/large/usdc.png?" alt="usdc image">
+                    </div>
+                    <div class="ps">
+                        <p class="name">USDC</p>
+                        <p class="coinsmall">USDC</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="usdc-price"></p>
+                    <p id="usdc-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <img src="https://coin-images.coingecko.com/coins/images/1094/large/tron-logo.png?"
+                            alt="trx image">
+                    </div>
+                    <div class="ps">
+                        <p class="name">TRON</p>
+                        <p class="coinsmall">TRX</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="trx-price"></p>
+                    <p id="trx-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <svg viewBox="0 0 32 32">
+                            <circle cx="16" cy="16" r="16" fill="#0033AD" />
+                            <circle cx="16" cy="16" r="4" fill="#fff" />
+                        </svg>
+                    </div>
+                    <div class="ps">
+                        <p class="name">CARDONA</p>
+                        <p class="coinsmall">CAR</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="car-price"></p>
+                    <p id="car-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <img src="https://coin-images.coingecko.com/coins/images/26375/large/sui-ocean-square.png?"
+                            alt="">
+                    </div>
+                    <div class="ps">
+                        <p class="name">SUI</p>
+                        <p class="coinsmall">sui</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="sui-price"></p>
+                    <p id="sui-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <img src="https://coin-images.coingecko.com/coins/images/11939/large/shiba.png?1696511800"
+                            ,"current_price":8.58e-06" alt="shida coin image">
+                    </div>
+                    <div class="ps">
+                        <p class="name">Shiba Inu</p>
+                        <p class="coinsmall">shib</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="shida-price"></p>
+                    <p id="shida-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <img src="https://coin-images.coingecko.com/coins/images/9956/large/Badge_Dai.png?" alt="">
+                    </div>
+                    <div class="ps">
+                        <p class="name">DAI</p>
+                        <p class="coinsmall">dai</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="dai-price"></p>
+                    <p id="dai-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <svg viewBox="0 0 32 32">
+                            <circle cx="16" cy="16" r="16" fill="#0033AD" />
+                            <circle cx="16" cy="16" r="4" fill="#fff" />
+                        </svg>
+                    </div>
+                    <div class="ps">
+                        <p class="name">CARDONA</p>
+                        <p class="coinsmall">CAR</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="car-price"></p>
+                    <p id="car-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <svg viewBox="0 0 32 32">
+                            <circle cx="16" cy="16" r="16" fill="#0033AD" />
+                            <circle cx="16" cy="16" r="4" fill="#fff" />
+                        </svg>
+                    </div>
+                    <div class="ps">
+                        <p class="name">CARDONA</p>
+                        <p class="coinsmall">CAR</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="car-price"></p>
+                    <p id="car-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="50" fill="#000" />
+                            <path fill="#fff"
+                                d="M72 23L57 38a17 17 0 01-24 0L18 23h10l15 15a11 11 0 0014 0l15-15h10zM18 77l15-15a17 17 0 0124 0l15 15H62L47 62a11 11 0 00-14 0L18 77z" />
+                        </svg>
+                    </div>
+                    <div class="ps">
+                        <p class="name">XRP</p>
+                        <p class="coinsmall">xrp</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="xrp-price"></p>
+                    <p id="xrp-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <img src="https://coin-images.coingecko.com/coins/images/4128/large/solana.png?" alt="">
+                    </div>
+                    <div class="ps">
+                        <p class="name">SOLANA</p>
+                        <p class="coinsmall">SOL</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="sol-price"></p>
+                    <p id="sol-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <svg viewBox="0 0 32 32">
+                            <circle cx="16" cy="16" r="16" fill="#627EEA" />
+                            <path fill="#fff" d="M16 4l-7 12 7 4 7-4-7-12zm0 24l7-10-7 4-7-4 7 10z" />
+                        </svg>
+                    </div>
+                    <div class="ps">
+                        <p class="name">ETHEREUM</p>
+                        <p class="coinsmall">ETH</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="eth-price"></p>
+                    <p class="eth-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <svg viewBox="0 0 32 32">
+                            <circle cx="16" cy="16" r="16" fill="#0033AD" />
+                            <circle cx="16" cy="16" r="4" fill="#fff" />
+                        </svg>
+                    </div>
+                    <div class="ps">
+                        <p class="name">CARDONA</p>
+                        <p class="coinsmall">CAR</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="car-price"></p>
+                    <p id="car-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="50" fill="#000" />
+                            <path fill="#fff"
+                                d="M72 23L57 38a17 17 0 01-24 0L18 23h10l15 15a11 11 0 0014 0l15-15h10zM18 77l15-15a17 17 0 0124 0l15 15H62L47 62a11 11 0 00-14 0L18 77z" />
+                        </svg>
+                    </div>
+                    <div class="ps">
+                        <p class="name">XRP</p>
+                        <p class="coinsmall">xrp</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="xrp-price"></p>
+                    <p id="xrp-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product">
+                <div class="coinname">
+                    <div class="coin">
+                        <svg viewBox="0 0 32 32">
+                            <circle cx="16" cy="16" r="16" fill="#0033AD" />
+                            <circle cx="16" cy="16" r="4" fill="#fff" />
+                        </svg>
+                    </div>
+                    <div class="ps">
+                        <p class="name">CARDONA</p>
+                        <p class="coinsmall">CAR</p>
+                    </div>
+                </div>
+                <div class="half">
+                    <p id="car-price"></p>
+                    <p id="car-change"></p>
+                    <div class="button">
+                        <button class="trade">Trade</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+    </section>
+    <!-- <section class="animation">
+        <div class="ticker">
+            <p class="a">Ayomide withdraw $100</p>
+            <p class="a">User bola  made  $1000  in  Bitcoin  trade</p>
+            <p class="a">User****** deposit $200</p>
+            <p class="a">User yo made $100</p>
+            <p class="a">userK***** made $100000</p>
+            <p class="a">User king transfer $1m to tpkrii**********</p>
+            <p class="a"> User Amos withdraw $10</p> 
+            <p class="a">User****** made $100000</p>
+        </div>
+    </section> -->
+    <section id="about">
+        <p class="style1">Simple. Seamless. In Your Control.</p>
+        <p class="style2">Built for every trader, from beginner to expert.</p>
+
+        <div class="showcase">
+            <div class="feature">
+                <div class="icon">⚡</div>
+                <h4>Fast Trading</h4>
+                <p>Execute trades instantly with real-time price updates.</p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">🔒</div>
+                <h4>All-in-One Crypto Trading</h4>
+                <p>Advanced security to protect your assets and data.</p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">⚙️</div>
+                <h4>Smart Tools</h4>
+                <p>Powerful tools designed for both beginners and pros.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security level section -->
+    <section class="security">
+        <h1>Security and Compliance Framework</h1>
+        <p class="aboutsecurity">we've built a multi-layered security framework that addresses vulnerabilities, data
+            protection, user privacy, and global compliance standards.
+            and protection of user data
+        </p>
+    </section>
+
+    <!-- commmunity section for user to join crynite commuinty -->
+    <section class="community">
+        <div class="communitycontainer">
+            <div class="join">
+                <p class="jointitle">Join our community</p>
+                <p class="jointext">Crynite is home to over 40 Million users across 200+ countries and regions,
+                    with support for over 20 languages.</p>
+                <button href="hhhh" class="telegram">Join Now</button>
+            </div>
+            <div class="join">
+                <p class="jointitle">24/7 Support</p>
+                <p class="jointext">Not sure how to trade or stuck on a chart? Our support team is happy to help!</p>
+                <button class="telegram"><a href="hhw">Contact</a></button>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-container">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+                <h2>CRYNITE</h2>
+                <p>Secure. Fast. Trusted crypto platform.</p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h4>Contact</h4>
+
+                <div class="footer-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>support@crynite.com</span>
+                </div>
+
+                <div class="footer-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+234 800 000 0000</span>
+                </div>
+
+                <div class="footer-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Lagos, Nigeria</span>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#crypto">Crypto</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 Crynite. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="crypto.js"></script>
+</body>
+
+</html>
