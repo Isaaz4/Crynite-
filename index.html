@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto project</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="crypto.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -17,17 +17,19 @@
         </div>
         <div class="nav">
             <nav>
-                <li class="home"><a href="#home">Home</a></li>
-                <li class="crypto"><a href="#crypto">Crypto</a></li>
-                <li class="about"><a href="#about">About-us</a></li>
-                <li class="Contact"><a href="#contact">Contact</a></li>
+                <ul>
+                    <li class="home"><a href="#home">Home</a></li>
+                    <li class="crypto"><a href="#crypto">Crypto</a></li>
+                    <li class="about"><a href="#about">About-us</a></li>
+                    <li class="Contact"><a href="#Contact">Contact</a></li>
+                </ul>
                 <!-- <li> <button class="wallet"> Connect Wallet <i class="fas fa-wallet"></i></button></li> -->
             </nav>
 
             <div class="Authentication">
-                <button class="themeToggle"><i class="fa-solid fa-moon"></i></button>
-                <a href="kucoin.com"><button class="login">Login</button></a>
-                <a href="kucoin.com"><button class="signup">Sign-up</button></a>
+                <button id="themeToggle">🌙</button>
+                <button class="login">Login</button>
+                <button class="signup">Sign-up</button>
             </div>
         </div>
         <div class="mobilenav">
@@ -35,16 +37,13 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="mobilemenu">
-                <ul>
-                    <button class="themeToggle"><i class="fa-solid fa-moon"></i></button>
-                    <li class="home"><a href="#home">Home</a></li>
-                    <li class="crypto"><a href="#crypto">Crypto</a></li>
-                    <li class="about"><a href="#about">About-us</a></li>
-                    <li class="Contact"><a href="#contact">Contact</a></li>
-                </ul>
+                <li class="home"><a href="#home">Home</a></li>
+                <li class="crypto"><a href="#crypto">Crypto</a></li>
+                <li class="about"><a href="#about">About-us</a></li>
+                <li class="Contact"><a href="#Contact">Contact</a></li>
                 <div class="Authenticationmobile">
-                    <a href="by"><button class="login">Log In</button></a>
-                    <a href="b.com"><button class="signup">Sign Up</button></a>
+                    <button class="login">Log In</button>
+                    <button class="signup">Sign Up</button>
                 </div>
             </div>
         </div>
@@ -69,7 +68,7 @@
 
 
     <section id="crypto">
-        <h1>Popular Crypto</h1>
+        <h1 class="cryptoh1">Popular Crypto</h1>
         <div class="container">
             <div class="product">
                 <div class="coinname">
@@ -516,8 +515,10 @@
         </div>
     </section> -->
     <section id="about">
-        <p class="style1">Simple. Seamless. In Your Control.</p>
-        <p class="style2">Built for every trader, from beginner to expert.</p>
+        <div class="about1">
+            <p class="style1">Simple. Seamless. In Your Control.</p>
+            <p class="style2">Built for every trader, from beginner to expert.</p>
+        </div>
 
         <div class="showcase">
             <div class="feature">
@@ -565,54 +566,10 @@
             </div>
         </div>
     </section>
-
-    <footer id="contact">
-        <div class="footer-container">
-
-            <!-- Brand -->
-            <div class="footer-brand">
-                <h2>CRYNITE</h2>
-                <p>Secure. Fast. Trusted crypto platform.</p>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="footer-section">
-                <h4>Contact</h4>
-
-                <div class="footer-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>support@crynite.com</span>
-                </div>
-
-                <div class="footer-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>+234 800 000 0000</span>
-                </div>
-
-                <div class="footer-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Lagos, Nigeria</span>
-                </div>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <a href="#home">Home</a>
-                <a href="#crypto">Crypto</a>
-                <a href="#about">About Us</a>
-                <a href="#contact">Contact</a>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            © 2025 Crynite. All rights reserved.
-        </div>
+    <footer>
+        copyright@2025 Crynite crypto website
     </footer>
-
-    <script src="script.js"></script>
+    <script src="crypto.js"></script>
 </body>
-
 
 </html>
