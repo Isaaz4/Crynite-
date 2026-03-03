@@ -43,62 +43,31 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 });
 
-const themeToggles = document.querySelectorAll(".themeToggle");
-const hero = document.querySelector(".hero");
-const cryptoh1 = document.getElementById("crypto")?.querySelector("h1");
-const security = document.querySelector(".security");
-const mobileToggle = document.querySelector(".mobiletoggle");
-const footer = document.getElementById("contact");
-const herobut = document.querySelector(".herobut");
-const color = document.querySelector(".color")
-const Authen = document.querySelector(".login");
+const themeToggle = document.getElementById("themeToggle");
+const hero = document.getElementsByClassName("hero");
+const cryptoh1 =  document.getElementsByClassName("cryptoh1");
+const securitycolor = document.getElementsByClassName("security");
+const herobutton = document.getElementsByClassName("herobut");
+const trade = document.getElementsByClassName("trade");
+const about= document.getElementsByClassName("about1")
 
-themeToggles.forEach(toggle => {
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("light");
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+  hero[0].classList.toggle("light");
+  cryptoh1[0].classList.toggle("light");
+  securitycolor[0].classList.toggle("light");
+  herobutton[0].classList.toggle("light");
+  trade[0].classList.toggle(".light")
+  about[0].classList.toggle("light");
 
-    hero?.classList.toggle("light");
-    cryptoh1?.classList.toggle("light");
-    security?.classList.toggle("light");
-    mobileToggle?.classList.toggle("light");
-    footer?.classList.toggle("light");
-    herobut?.classList.toggle("light");
-    color?.classList.toggle("light");
-    Authen?.classList.toggle("light");
-
-
-    const isLight = document.body.classList.contains("light");
-
-    themeToggles.forEach(btn => {
-      const icon = btn.querySelector("i");
-      if (!icon) return;
-
-      if (isLight) {
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
-      } else {
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
-      }
-    });
-
-    console.log("Theme toggled");
-  });
+  themeToggle.textContent =
+    document.body.classList.contains("light") ? "☀️" : "🌙";
 });
 
 const mobilebutton = document.querySelector(".hamburger");
 const menu = document.querySelector(".mobilemenu");
-const menulist = document.querySelectorAll(".mobilemenu li");
 
 mobilebutton.addEventListener("click", () =>{
   menu.classList.toggle("open");
   console.log("menu open")
 })
-menulist.forEach(items => {
-  items.addEventListener("click", () => {
-    menu.classList.remove("open");  
-  });
-});
-
-
-
