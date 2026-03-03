@@ -31,16 +31,7 @@ html {
 }
 
 body.light {
-    background: #f8faff;
-}
-
-body::-webkit-scrollbar {
-    display: none;
-}
-
-body {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    background: #F1F5F9;
 }
 
 header {
@@ -70,13 +61,20 @@ header {
     transition: transform 0.3s ease;
 }
 
-nav {
+ul {
     display: flex;
-    align-items: center;
-    gap: 25px;
+    gap: 30px;
+    transition: transform 0.3s ease;
 }
 
-nav li a:hover {
+ul li a {
+    border: 1px solid transparent;
+    color: white;
+    box-shadow: 1px 1px 1px rgb(126, 67, 67);
+    border: none;
+}
+
+ul li a:hover {
     color: blue;
     transition: transform 0.3s ease;
     transform: translateY(5);
@@ -91,17 +89,6 @@ a {
     color: rgb(34, 34, 237);
 }
 
-.color.light {
-    color: rgb(1, 1, 158);
-}
-
-body.light .fa-moon {
-    display: none;
-}
-
-body.light .fa-sun {
-    display: inline;
-}
 
 .Authentication {
     display: flex;
@@ -115,14 +102,9 @@ body.light .fa-sun {
     width: auto;
     background: transparent;
     padding: 6px;
-    border: 2px solid rgb(103, 101, 209);
+    border: 2px solid rgb(28, 28, 150);
     border-radius: 10px;
     font-size: 15px;
-    cursor: pointer;
-}
-
-.Authentication .login.light {
-    border: 2px solid navy;
     cursor: pointer;
 }
 
@@ -139,17 +121,21 @@ body.light .fa-sun {
     margin-right: 8px;
 }
 
-.Authentication .ThemeToggle {
-    color: inherit;
+.Authentication #themeToggle {
+    color: white;
+    height: auto;
+    width: auto;
     background: transparent;
+    padding: 6px;
+    border: 2px solid transparent;
+    border-radius: 10px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
 }
 
-.Authentication .fab {
-    background-color: transparent;
-    font-size: 18px;
+.Authentication #themeToggle:hover {
+    border: 2px solid rgb(28, 28, 150);
 }
 
 .Authentication .login:hover {
@@ -182,70 +168,44 @@ body.light .fa-sun {
 .mobilemenu {
     position: fixed;
     /* 🔥 KEY FIX */
-    top: 40px;
+    top: -10px;
     left: 0;
-    width: 250%;
-    height: auto;
-    padding: 18px 10px 18px 10px;
+    width: 100%;
+    height: 40vh;
+    /* 🔥 NO AUTO HEIGHT */
+    padding: 20px 20px 20px;
     display: grid;
     gap: 10px;
     background: #000;
     color: navy;
-    transform: translatex(-100%);
-    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
     z-index: 999;
-    opacity: 0;
 }
 
 /* open state */
 .mobilemenu.open {
     display: grid;
-    transform: translateX(0);
-    opacity: 1;
+    transform: translateY(0);
+    /* 🔥 animate properly */
 }
 
 /* menu items */
 .mobilemenu li {
     list-style: none;
-    width: 60%;
+    width: 100%;
     padding: 8px;
 }
 
 .mobilemenu li a {
-    display: block;
     text-decoration: none;
-    color: white;
+    color: navy;
     height: 100%;
-    padding: 5px;
-    border: 2px dashed navy;
 }
 
 .mobilemenu li a:hover {
-    color: navy;
     border: 1px dashed white;
     transition: transform 0.3s ease;
-}
-
-.mobilemenu .themeToggle {
-    color: white;
-    background: transparent;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    position: absolute;
-    right: 15px;
-}
-
-.Authenticationmobile .fa {
-    padding: 3px;
-    border: 1px solid blue;
-    font-size: 18px;
-    background-color: transparent;
-}
-
-.mobilemenu .themetoggle.light {
-    text-align: right;
-    background-color: white;
 }
 
 /* auth buttons */
@@ -253,7 +213,6 @@ body.light .fa-sun {
     display: flex;
     gap: 30px;
     margin-top: 20px;
-    margin-bottom: 10px;
 }
 
 .Authenticationmobile .login {
@@ -261,23 +220,22 @@ body.light .fa-sun {
     color: blue;
     padding: 5px;
     border-radius: 8px;
-    transition: transform 0.6s ease-in;
+    transition: transform 0.3s ease;
 }
 
 .Authenticationmobile .signup {
     background-color: white;
-    color: navy;
+    color: blue;
     padding: 5px;
     border-radius: 8px;
-    transition: transform 0.6s ease-in;
 }
 
 .Authenticationmobile .login:hover {
-    transition: scale(1.1);
+    transition: ease-in;
 }
 
-.Authenticationmobile .signup:hover {
-    transition: scale(1.1);
+.Authenticationmobile .signup {
+    transition: transform 0.3 ease;
 }
 
 .wallet {
@@ -330,13 +288,12 @@ body.light .fa-sun {
 }
 
 .hero.light {
-    color: navy;
+    color: rgb(28, 28, 150);
 }
 
 /* Light mode */
 .hero.light:before {
-    background: #ffffff;
-    color: navy;
+    background: #F1F5F9;
 }
 
 .herotext {
@@ -383,11 +340,8 @@ body.light .fa-sun {
 }
 
 .herobut.light {
-    background: navy;
-    color: white;
-    transition: all 0.3s ease;
+    background-color: rgb(4, 4, 185);
 }
-
 
 .herobut:hover {
     background-color: white;
@@ -432,17 +386,20 @@ body.light .fa-sun {
 #crypto {
     position: relative;
     width: 100%;
+    height: auto;
     padding: 20px 0 5rem 0;
     z-index: 2;
+    display: grid;
+    justify-content: center;
 }
 
 #crypto h1 {
-    text-align: left;
+    display: flex;
+    position: static;
+    width: auto;
     padding: 20px 0 10px 40px;
     color: white;
-    transition: color 0.3s ease;
 }
-
 
 #crypto h1:hover {
     color: blue;
@@ -453,14 +410,15 @@ body.light .fa-sun {
     color: navy;
 }
 
-
 .container {
     display: grid;
+    height: auto;
+    justify-content: center;
+    width: 73vw;
     grid-template-columns: repeat(5, 1fr);
     gap: 16px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px 10px 25px 60px;
+    padding: 30px 10px 25px 10px;
+    margin-inline: 10rem;
 }
 
 .product {
@@ -549,6 +507,10 @@ body.light .fa-sun {
     transition: transform 0.3s ease;
 }
 
+.trade.light {
+    background-color: navy;
+}
+
 /* animation */
 @keyframes text {
     0% {
@@ -563,6 +525,13 @@ body.light .fa-sun {
 /* about section */
 #about {
     position: relative;
+}
+
+.about{
+    color: inherit;
+}
+.about1.light {
+    color: rgb(28, 28, 150);
 }
 
 .style1 {
@@ -716,89 +685,13 @@ body.light .fa-sun {
     transition: transform 0.3s ease;
 }
 
-
-#contact {
-    background: linear-gradient(180deg, #020617, #00040f);
-    color: #e5ecff;
-    padding: 50px 16px 20px;
-    margin-top: 40px;
-}
-
-.contact.light {
-    background: #f5f5f5;
-    color: #333333;
-}
-
-/* container */
-.footer-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* brand */
-.footer-brand h2 {
-    color: #ffffff;
-    font-size: 24px;
-    margin-bottom: 6px;
-}
-
-.footer-brand p {
-    font-size: 14px;
-    color: #b5c0ff;
-}
-
-/* sections */
-.footer-section h4 {
-    color: #ffffff;
-    margin-bottom: 12px;
-    font-size: 16px;
-}
-
-.footer-section a {
-    display: block;
-    color: #b5c0ff;
-    text-decoration: none;
-    font-size: 14px;
-    margin-bottom: 8px;
-}
-
-.footer-section a:hover {
-    color: #3b82f6;
-}
-
-/* contact item */
-.footer-item {
+footer {
+    background: #000205;
+    color: #f3f5ff;
+    padding: 10px;
     display: flex;
-    align-items: center;
-    font-size: 14px;
-    margin-bottom: 10px;
+    justify-content: center;
 }
-
-.footer-item i {
-    margin-right: 10px;
-    color: #3b82f6;
-}
-
-/* bottom */
-.footer-bottom {
-    text-align: center;
-    font-size: 13px;
-    color: #8da2ff;
-    margin-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 12px;
-}
-
-/* desktop */
-@media (min-width: 768px) {
-    .footer-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 
 /* small phone screen from 360px iphone 6 screen to 600px */
 @media screen and (min-width:320px) and (max-width:600px) {
@@ -816,6 +709,11 @@ body.light .fa-sun {
 
     .nav {
         display: none;
+    }
+
+    .Authentication #themeToggle {
+        display: block;
+        background: none;
     }
 
     .mobilemenu {
@@ -892,24 +790,22 @@ body.light .fa-sun {
     #crypto {
         padding: 10px;
         display: block;
-        /* fine */
     }
 
     #crypto h1 {
         padding: 0;
         text-align: left;
-        margin-left: 10px;
     }
 
     .container {
-        display: grid;
+        margin-inline: auto;
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 15px 10px 20px 25px;
+        padding: 15px 10px 20px 20px;
+        width: 80%;
+        row-gap: 13px;
+        column-gap: 12px;
+        justify-content: center;
     }
-
 
     .showcase {
         display: grid;
@@ -917,7 +813,7 @@ body.light .fa-sun {
         gap: 20px;
         margin: 0;
         gap: 24px;
-        padding: 20px;
+        padding: 35px;
     }
 
     .feature {
@@ -958,8 +854,9 @@ body.light .fa-sun {
     }
 
     .security {
-        top: 10px;
-        height: auto;
+        padding: 20px;
+        height: 40vh;
+        top: 50px;
     }
 
     .security h1 {
@@ -969,15 +866,6 @@ body.light .fa-sun {
     .security p {
         text-align: center;
         padding: 0 10px 0 10px;
-    }
-
-    .communitycontainer {
-        display: grid;
-        gap: 10px;
-    }
-
-    .join {
-        width: 100%;
     }
 
 }
