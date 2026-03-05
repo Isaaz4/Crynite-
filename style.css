@@ -28,10 +28,15 @@ html {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
         "Helvetica Neue", sans-serif;
+    scroll-behavior: smooth;
 }
 
 body.light {
     background: #F1F5F9;
+}
+
+section {
+    scroll-snap-align: start;
 }
 
 header {
@@ -121,7 +126,7 @@ a {
     margin-right: 8px;
 }
 
-.Authentication #themeToggle {
+.themeToggle {
     color: white;
     height: auto;
     width: auto;
@@ -134,7 +139,7 @@ a {
     cursor: pointer;
 }
 
-.Authentication #themeToggle:hover {
+.Authentication .themeToggle:hover {
     border: 2px solid rgb(28, 28, 150);
 }
 
@@ -148,94 +153,96 @@ a {
     transition: all 0.3s ease;
 }
 
-/* mobile nav wrapper */
+/* ========================= */
+/* MOBILE NAVIGATION */
+/* ========================= */
+
+
+/* Hamburger button */
 .mobilenav {
-    position: relative;
     display: none;
 }
 
-/* hamburger button */
 .hamburger {
-    position: relative;
-    z-index: 1001;
     background: none;
+    display: none;
     border: none;
     color: white;
     font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
 }
 
-/* mobile menu overlay */
+/* Mobile Menu */
 .mobilemenu {
     position: fixed;
-    /* 🔥 KEY FIX */
-    top: -10px;
-    left: 0;
-    width: 100%;
-    height: 40vh;
-    /* 🔥 NO AUTO HEIGHT */
-    padding: 20px 20px 20px;
-    display: grid;
-    gap: 10px;
-    background: #000;
-    color: navy;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-    z-index: 999;
-}
-
-/* open state */
-.mobilemenu.open {
-    display: grid;
-    transform: translateY(0);
-    /* 🔥 animate properly */
-}
-
-/* menu items */
-.mobilemenu li {
-    list-style: none;
-    width: 100%;
-    padding: 8px;
-}
-
-.mobilemenu li a {
-    text-decoration: none;
-    color: navy;
-    height: 100%;
-}
-
-.mobilemenu li a:hover {
-    border: 1px dashed white;
-    transition: transform 0.3s ease;
-}
-
-/* auth buttons */
-.Authenticationmobile {
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background: #010815;
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    padding: 80px 25px 30px 25px;
+    gap: 25px;
+    transition: right 0.4s ease;
+    z-index: 1000;
+}
+
+.mobilemenu {
+    display: none;
+}
+
+/* When open */
+.mobilemenu.open {
+    right: 0;
+}
+
+/* Mobile Links */
+.mobilemenu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.mobilemenu a:hover {
+    color: #2563EB;
+}
+
+/* Authentication Buttons */
+.Authenticationmobile {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .Authenticationmobile .login {
-    background-color: transparent;
-    color: blue;
-    padding: 5px;
+    background: transparent;
+    border: 1px solid #2563EB;
+    color: #2563EB;
+    padding: 8px;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    font-size: 15px;
 }
 
 .Authenticationmobile .signup {
-    background-color: white;
-    color: blue;
-    padding: 5px;
+    background: #2563EB;
+    color: white;
+    padding: 8px;
     border-radius: 8px;
+    border: none;
+    font-size: 15px;
 }
 
-.Authenticationmobile .login:hover {
-    transition: ease-in;
-}
-
-.Authenticationmobile .signup {
-    transition: transform 0.3 ease;
+.Authenticationmobile .themeToggle {
+    background: transparent;
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
 }
 
 .wallet {
@@ -288,12 +295,13 @@ a {
 }
 
 .hero.light {
-    color: rgb(28, 28, 150);
+    color: navy;
 }
 
 /* Light mode */
 .hero.light:before {
     background: #F1F5F9;
+    transition: transform 0.ms ease;
 }
 
 .herotext {
@@ -319,7 +327,7 @@ a {
 .small {
     font-size: 16.9px;
     padding: 0 0 10px 0;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .smallertext {
@@ -389,15 +397,13 @@ a {
     height: auto;
     padding: 20px 0 5rem 0;
     z-index: 2;
-    display: grid;
-    justify-content: center;
 }
 
 #crypto h1 {
     display: flex;
     position: static;
     width: auto;
-    padding: 20px 0 10px 40px;
+    padding: 20px 0 10px 28px;
     color: white;
 }
 
@@ -414,11 +420,11 @@ a {
     display: grid;
     height: auto;
     justify-content: center;
-    width: 73vw;
+    width: 100%;
     grid-template-columns: repeat(5, 1fr);
     gap: 16px;
-    padding: 30px 10px 25px 10px;
-    margin-inline: 10rem;
+    padding: 30px 60px 25px 10px;
+    margin-inline: 5rem;
 }
 
 .product {
@@ -484,9 +490,12 @@ a {
 
 .half .button {
     position: relative;
+    display: flex;
+    align-items: center;
     font-size: 25px;
     transition: transform 0.3s ease;
 }
+
 
 .trade {
     display: flex;
@@ -525,13 +534,16 @@ a {
 /* about section */
 #about {
     position: relative;
+    height: auto;
 }
 
-.about{
+.about {
     color: inherit;
 }
+
+
 .about1.light {
-    color: rgb(28, 28, 150);
+    color: rgb(4, 4, 185);
 }
 
 .style1 {
@@ -540,7 +552,7 @@ a {
     font-size: 20px;
     font-weight: 700;
     width: 100%;
-    filter: blur(0.78px);
+    filter: blur(0.40px);
     gap: 0;
     padding: 20px 40px 0 8rem;
 }
@@ -552,7 +564,7 @@ a {
     font-weight: 700;
     width: 100%;
     gap: 0;
-    filter: blur(0.79px);
+    filter: blur(0.40px);
     padding: 0 40px 20px 8rem;
 }
 
@@ -602,7 +614,7 @@ a {
 }
 
 .security.light {
-    color: navy;
+    color: rgb(4, 4, 185);
 }
 
 .security h1 {
@@ -619,7 +631,7 @@ a {
 }
 
 /* join community section */
-.community {
+#contact {
     position: relative;
     padding: 40px;
     gap: 10px;
@@ -699,25 +711,23 @@ footer {
         width: 100%;
         height: 100%;
         overflow-x: hidden;
+        margin: 0;
+        padding: 0;
     }
 
     header {
         justify-content: space-between;
         align-items: center;
-        padding: 5px 10px 5px 10px;
+        padding: 8px 10px 5px 10px;
+        top: 0;
     }
 
     .nav {
         display: none;
     }
 
-    .Authentication #themeToggle {
-        display: block;
-        background: none;
-    }
-
     .mobilemenu {
-        display: none;
+        display: flex;
     }
 
     .mobilenav {
@@ -725,9 +735,14 @@ footer {
         line-height: 1.0;
     }
 
+    .hamburger {
+        display: flex;
+    }
+
     .hambudger p {
         font-size: 20px;
         width: 130%;
+        cursor: pointer;
     }
 
     #home {
@@ -795,16 +810,21 @@ footer {
     #crypto h1 {
         padding: 0;
         text-align: left;
+        font-size: 26px;
     }
 
     .container {
         margin-inline: auto;
         grid-template-columns: repeat(2, 1fr);
-        padding: 15px 10px 20px 20px;
-        width: 80%;
-        row-gap: 13px;
-        column-gap: 12px;
+        padding: 15px 32px 20px 32px;
+        width: 100%;
+        row-gap: 20px;
+        column-gap: 30px;
         justify-content: center;
+    }
+
+    .product {
+        width: auto;
     }
 
     .showcase {
@@ -818,7 +838,7 @@ footer {
 
     .feature {
         background: linear-gradient(180deg, #07102a, #02081a);
-        padding: 24px;
+        padding: 30px;
         border-radius: 14px;
         min-height: 200px;
         text-align: left;
@@ -854,18 +874,23 @@ footer {
     }
 
     .security {
-        padding: 20px;
+        padding: 10px;
         height: 40vh;
         top: 50px;
+        margin: 4px 0 0 0;
     }
 
     .security h1 {
         text-align: center;
+        font-size: 2em;
     }
 
     .security p {
         text-align: center;
-        padding: 0 10px 0 10px;
+    }
+
+    .about1 {
+        margin: 20% 0 3px 0;
     }
 
 }
